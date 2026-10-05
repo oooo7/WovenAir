@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { JournalArticle } from "@/types";
 
 interface JournalSectionProps {
@@ -34,45 +35,52 @@ export default function JournalSection({ articles }: JournalSectionProps) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {displayArticles.map((article) => (
-            <Link
+          {displayArticles.map((article, index) => (
+            <motion.div
               key={article.id}
-              href={`/journal/${article.slug}`}
-              className="group block space-y-4"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="relative aspect-[16/11] w-full overflow-hidden bg-[#D8CDBD]">
-                <Image
-                  src={article.heroImage}
-                  alt={article.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.18em] text-[#9B5E49] font-medium">
-                  <span>{article.category}</span>
-                  <span>·</span>
-                  <span className="text-[#666158] font-normal">{article.readTime}</span>
+              <Link
+                href={`/journal/${article.slug}`}
+                className="group block space-y-4"
+              >
+                <div className="relative aspect-[16/11] w-full overflow-hidden bg-[#D8CDBD]">
+                  <Image
+                    src={article.heroImage}
+                    alt={article.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover group-hover:scale-[1.05] transition-transform duration-700 ease-out"
+                  />
                 </div>
 
-                <h3 className="font-serif text-[22px] text-[#1F1E1A] group-hover:text-[#9B5E49] transition-colors leading-snug">
-                  {article.title}
-                </h3>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.18em] text-[#9B5E49] font-medium">
+                    <span>{article.category}</span>
+                    <span>·</span>
+                    <span className="text-[#666158] font-normal">{article.readTime}</span>
+                  </div>
 
-                <p className="text-[13px] text-[#666158] line-clamp-2 leading-relaxed font-light">
-                  {article.excerpt}
-                </p>
+                  <h3 className="font-serif text-[22px] text-[#1F1E1A] group-hover:text-[#9B5E49] transition-colors leading-snug">
+                    {article.title}
+                  </h3>
 
-                <div className="pt-2">
-                  <span className="text-[11px] uppercase tracking-[0.16em] text-[#1F1E1A] group-hover:text-[#9B5E49] font-medium inline-flex items-center gap-1.5 transition-colors">
-                    <span>Read Article</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
+                  <p className="text-[13px] text-[#666158] line-clamp-2 leading-relaxed font-light">
+                    {article.excerpt}
+                  </p>
+
+                  <div className="pt-2">
+                    <span className="text-[11px] uppercase tracking-[0.16em] text-[#1F1E1A] group-hover:text-[#9B5E49] font-medium inline-flex items-center gap-1.5 transition-colors">
+                      <span>Read Article</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" />
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -61,7 +61,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
               fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className={`object-cover transition-opacity duration-700 ease-in-out absolute inset-0 ${
-                isHovered ? "opacity-100 scale-102" : "opacity-0 scale-100"
+                isHovered ? "opacity-100 scale-[1.02]" : "opacity-0 scale-100"
               }`}
             />
           )}

@@ -64,7 +64,7 @@ export default function Header() {
         }`}
         onMouseLeave={() => setActiveMegaMenu(null)}
       >
-        <div className="max-w-[1320px] mx-auto px-5 sm:px-10 h-18 sm:h-20 flex items-center justify-between">
+        <div className="max-w-[1320px] mx-auto px-5 sm:px-10 h-16 sm:h-[76px] flex items-center justify-between">
           {/* Mobile hamburger */}
           <div className="flex items-center lg:hidden">
             <button

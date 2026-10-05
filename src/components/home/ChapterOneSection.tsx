@@ -27,8 +27,8 @@ export default function ChapterOneSection() {
                 className="object-cover"
               />
             </div>
-            {/* Small floating detail card */}
-            <div className="hidden sm:block absolute -bottom-8 -right-8 w-48 bg-[#F6F1E8] p-4 border border-[#D8CDBD] shadow-sm">
+            {/* Small floating detail card — positioned inside image boundaries */}
+            <div className="hidden sm:block absolute bottom-4 right-4 w-48 bg-[#F6F1E8]/95 backdrop-blur-sm p-4 border border-[#D8CDBD] shadow-sm z-10">
               <span className="text-[9px] uppercase tracking-[0.2em] text-[#666158] block mb-1">
                 Field Note
               </span>

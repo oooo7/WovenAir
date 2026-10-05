@@ -13,7 +13,7 @@ export default function SareeInMotionSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=2000&q=85"
+          src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=2000&q=85"
           alt="Saree in motion editorial banner"
           fill
           sizes="100vw"
@@ -67,7 +67,7 @@ export default function SareeInMotionSection() {
 
               <div className="relative aspect-video w-full bg-black flex items-center justify-center">
                 <Image
-                  src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1600&q=85"
+                  src="https://images.unsplash.com/photo-1609803384069-19f3e5a5e6aa?auto=format&fit=crop&w=1600&q=85"
                   alt="Drape motion frame"
                   fill
                   className="object-cover"

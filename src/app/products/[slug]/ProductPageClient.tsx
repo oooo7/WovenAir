@@ -9,7 +9,6 @@ import PincodeChecker from "@/components/product/PincodeChecker";
 import ProductStoryAccordions from "@/components/product/ProductStoryAccordions";
 import StickyMobileBar from "@/components/product/StickyMobileBar";
 import ProductCard from "@/components/product/ProductCard";
-import ThreadToSareeTimeline from "@/components/home/ThreadToSareeTimeline";
 import ShopTheLookSection from "@/components/home/ShopTheLookSection";
 import { Product } from "@/types";
 import { formatPrice } from "@/lib/utils";
@@ -213,9 +212,6 @@ export default function ProductPageClient({
           </div>
         </div>
       </div>
-
-      {/* From Thread to Saree Section */}
-      <ThreadToSareeTimeline />
 
       {/* Shop the Look Section */}
       <ShopTheLookSection />
