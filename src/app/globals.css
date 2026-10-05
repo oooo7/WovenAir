@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #F6F1E8;
+  --color-paper: #FBF9F5;
+  --color-ink: #1F1E1A;
+  --color-muted-ink: #666158;
+  --color-sand: #D8CDBD;
+  --color-clay: #9B5E49;
+  --color-olive: #68705B;
+  --color-rosewood: #704238;
+  --color-white: #FFFFFF;
+
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-body: var(--font-manrope), "Manrope", system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --ivory: #F6F1E8;
+  --paper: #FBF9F5;
+  --ink: #1F1E1A;
+  --muted-ink: #666158;
+  --sand: #D8CDBD;
+  --clay: #9B5E49;
+  --olive: #68705B;
+  --rosewood: #704238;
+  --white: #FFFFFF;
+}
+
+html {
+  background-color: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--ivory);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Custom scrollbars that feel quiet and editorial */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sand);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-ink);
+}
+
+/* Selection styling */
+::selection {
+  background-color: #E2D7C5;
+  color: #1F1E1A;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 2px;
+}
